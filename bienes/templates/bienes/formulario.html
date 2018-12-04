@@ -1,0 +1,22 @@
+{% load static %}
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{% static 'bienes/formulario.css' %}">
+<title>Registro de personas</title>
+</head>
+<body>
+<a href="/bienes"> -- Regresar -- </a>
+<hr/>
+<h3>Registro de personas</h3>
+<hr/>
+<div id="formulario">
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p  }}
+  <button type="submit">Registrar</button>
+</form>
+</div>
+<hr/>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% load static %}
+<html>
+<head><link rel="stylesheet" type="text/css" href="{% static 'bienes/tablas.css' %}">
+</head>
+<body>
+<a href="/bienes"> -- Regresar -- </a>
+<hr/>
+<h3>Listado de personas</h3>
+{% if personas %}
+    <table id="personas">
+        <tr><th>Documento</th><th>Nombre completo</th></tr>
+    {% for p in personas %}
+        <tr><td>{{p.documento}}</td><td>{{p.nombres}}&nbsp;{{p.apellidos}}</td></tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <p>Error de programación</p>
+{% endif %}
+</body>
+</html>
